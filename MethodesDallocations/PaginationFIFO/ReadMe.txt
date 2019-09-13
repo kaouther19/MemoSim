@@ -1,1 +1,1 @@
-Cette partie est réalisée par : BOULAOUINAT Kaouther G02
+Cette partie est rÃ©alisÃ©e par : BOULAOUINAT Kaouther
