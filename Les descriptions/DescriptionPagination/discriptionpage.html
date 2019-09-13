@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="discriptionpage.css">
+    <title>Description</title>
+</head>
+<body>
+        
+    <h1 id="partvar">LA PAGINATION</h1>
+    <div id="heada"></div>
+    <a href="#def" id="a1">1.1.	Les allocations non contiguës  </a>
+    <a href="#not" id="a2">2.La pagination :</a>
+    <a href="#stru" id="a3">3.Structures intervenants</a>
+    <a href="#etap" id="a4">4.Les algorithmes de remplacement</a>
+    <a href="#inav" id="a5">5.Notions a comprendre</a>
+    <div id="delimiteur">
+    <h2 id="def">1.Les allocations non contiguës : </h2>
+    <p id="defp">-	Le principe des allocations non contiguës consiste à considérer que l’ensemble des mots constituant un programme est maintenant un ensemble sécable. Ainsi, le programme à charger est divisé en un ensemble de morceaux, chaque morceau étant lui-même un ensemble de mots contigus insécable.
+       </p>
+       <p id="defp1">-	 Chaque morceau du programme est alors alloué en mémoire centrale indépendamment des autres :  </p>
+       <p id="defp2">–	 Si le programme est divisé en un ensemble de morceaux de taille fixe et égale, le mécanisme d’allocation de 
+           la mémoire centrale est alors celui de la pagination. Chaque morceau est appelé page.  </p>
+           <p id="defp3">–	 Si le programme est divisé en un ensemble de morceaux de taille variable, le mécanisme d’allocation de la mémoire centrale est alors celui de la segmentation. Chaque morceau est appelé segment. </p>
+            
+      
+    <h2 id="not">2.La pagination:</h2>
+   
+    <p id="fragexp">Dans le mécanisme de pagination, l’espace d’adressage du programme est découpé en morceaux linéaires de même taille appelés pages. L’espace de la mémoire physique est lui-même découpé en morceaux linéaires de même taille appelés case ou cadre de page. La taille d’une case est égale à la taille d’une page. Cette taille est définie par le matériel, comme étant une puissance de 2, variant selon les systèmes d’exploitation entre 512 octets et 8 192 octets. Ainsi, sur l’IBM 370, la taille des pages est fixée à 4 Ko tandis que sur une machine DEC la taille des pages est de 512 mots. Dans ce contexte, charger un programme en mémoire centrale consiste à placer les pages dans n’importe quelle case disponible. Pour connaître à tout moment quelles sont les cases libres en mémoire centrale à un instant t, le système maintient une table appelée table des cadres de pages ou table des cases qui indique pour chaque case de la mémoire physique, si la case est libre ou occupée, et si elle est occupée, quelle page et quel processus la possèdent. Ce mécanisme d’allocation de la mémoire centrale n’engendre pas de fragmentation externe. Il peut provoquer une fragmentation interne dans 
+        la mesure où la taille du programme à allouer n’est pas forcément un multiple de la taille des pages</p>
+    <h2 id="stru">3.Structures intervenants</h2>
+    <h4 id="letat">a.La table de pages :</h4>
+    <p id="pletat">La table des pages est une table contenant autant d’entrées que de pages dans l’espace d’adressage d’un processus.
+         Elle permet de faire la correspondance entre les pages et les cases mémoire ou elles sont chargées. </p>
+    <h2 id="etap">4.Les algorithmes de remplacement</h2>
+    <h4 id="rech">a.Remplacement FIFO</h4>
+    <p id="rechp">Avec cet algorithme, c’est la page la plus anciennement chargée qui est remplacée.
+            Une implémentation de cet algorithme peut être réalisée en conservant dans la table
+            des pages, la date de chargement de chaque page. La page choisie est alors celle pour
+            laquelle la date de chargement est la plus ancienne.
+            
+            </p>
+         
+            <h4 id="defil">b.Remplacement LRU</h4>
+            <p id="defilp">Avec cet algorithme, c’est la page la moins récemment utilisée qui est remplacée.
+                    Cette stratégie utilise le principe de la localité temporelle selon lequel les pages
+                    récemment utilisées sont celles qui seront référencées dans le futur. La page la moins
+                    récemment utilisée est donc jugée comme étant celle devenue la plus inutile.
+                      </p>
+             <h4 id="inser">c.Remplacement LFU </h4>
+             <p id="inserp">Avec l’algorithme LFU, c’est la page la moins fréquemment utilisée qui est remplacée.
+                    Cet algorithme présente un problème vis-à-vis des pages abondamment référencées
+                    sur un court laps de temps. La valeur du compteur pour ces pages étant élevée, elles
+                    ne sont pas retirées de la mémoire centrale, même si elles ne sont plus jamais référencées.
+                    L’implémentation de cet algorithme est réalisée à l’aide d’un compteur
+                    associé à chaque entrée de table des pages qui mémorise le nombre de références à
+                    une page. Cependant, les performances de ces deux algorithmes ne sont pas très bonnes
+                    et ils sont rarement utilisés.
+                    
+            <h4 id="lib">d.Remplacement Aging</h4>
+            <p id="libp">Avec cet algorithme, un bit de référence Ri et un registre à décalage son associés à chaque entrée de la table des pages. Le bit Ri est mis à 1 si la page est référencée , sinon il est mis à 0 puis ce bit est inséré à la gauche
+                 du registre associé. La page ayant la plus petite valeur de registre est la victime choisie .</p>
+
+            <h2 id="inav">5.Notions a comprendre </h2>
+            <h4 id="avan">a.Défaut de page :</h4>
+            <p id="avan1">La MMU accède à la table des pages pour et teste la valeur du bit de validation. Si la valeur du bit V est à faux, cela signifie que la page n’est pas chargée dans une case. Une trappe appelée défaut de page est levée qui suspend l’exécution du processus puis initialise une opération d’entrées-sorties afin de charger la page manquante en mémoire centrale dans une case libre. Les pages constituant l’espace d’adressage
+                 du processus sont stockées dans une zone particulière du disque communément appelée zone de swap. </p>
+            <h4 id="incov">b.Le remplacement des pages</h4>
+            <p id="incov1">Lors d’un défaut de page, la page manquante est chargée dans une case libre. Cependant,
+                    la totalité des cases de la mémoire centrale peut être occupée. Il faut donc
+                    libérer une case de la mémoire physique pour y placer la nouvelle page.
+                    .</p>
+                    <h4 id="incov2">c.La traduction des adresses :</h4>
+                    <p id="incov2p">L’espace d’adressage du processus étant découpé en pages, les adresses générées dans
+                            cet espace d’adressage sont des adresses paginées, c’est-à-dire qu’un octet est repéré
+                            par son emplacement relativement au début de la page à laquelle il appartient. L’adresse
+                            d’un octet est donc formée par le couple numéro de page p à laquelle appartient
+                            l’octet, déplacement d relativement au début de la page p
+                            </p>
+                            <h4 id="incov3">d.Evaluation des algorithmes: </h4>
+                    <p id="incov3p">L’évaluation de ces différentes stratégies s’effectue en comptant sur une même
+                            suite de références à des pages, le nombre de défaut de pages provoqués. Une telle
+                            suite de références à un même ensemble de pages est appelée chaîne de références.
+                            </p>
+
+   </div>
+       
+</body>
+</html>

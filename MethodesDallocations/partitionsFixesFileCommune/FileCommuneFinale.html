@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>File commune</title>
+    <!-- Custom fonts for this template-->
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <script src="../../js/d3.min.js"></script>
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="../../css/introjs.css">
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <script src="ScriptCommencer.js"></script>
+</head>
+
+
+<body id="page-top" >
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../Index/index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <!-- <i class="fas fa-laugh-wink"></i> -->
+        </div>
+        <div class="sidebar-brand-text mx-3" data-intro="Lien vers la page d'accueil" data-step="1">MemoSim <sup>0.01 </sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" >
+          <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+          <span>File Commune</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading" data-intro="Introduire les informations de la silmulation" data-step="2">
+        Avant La Simulation
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <img src=".\svg\one.svg"></img>
+          <span>La mémoire centrale</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">la taille:</h6>
+            <select id="taime" class="collapse-item"  style="width: 90%;height:34px;padding-top:1%;">
+
+              <option value="200">200 (KO)</option>
+              <option value="300">300 (KO)</option>
+              <option value="400">400 (KO)</option>
+              <option value="500">500 (KO)</option> 
+              
+              </select> 
+                 </div>
+        
+      </li>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#nbPartitons" aria-expanded="true" aria-controls="nbPartitons">
+            <img src=".\svg\two.svg"></img>
+            <span data-intro="Introduire les informations des partitions une par une" data-step="4">Les partitions</span>
+          </a>
+          <div id="nbPartitons" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Le nombre des partitions:</h6>
+                <select id="nbpa" class="collapse-item"  style="width: 90%;height:34px;padding-top:1%;">
+                  <option value="2">2 partitions </option>
+                  <option value="3">3 partitions </option>
+                  <option value="4">4 partitions</option>
+                  <option value="5">5 partitions </option>
+                  <option value="6">6 partitions </option>
+                  <option value="7">7 partitions </option>
+                  <option value="8">8 partitions </option>
+                  <option value="9">9 partitions </option>
+                  </select>  
+                  <div>
+                    <div>
+                        <h6 class="collapse-header" style="position:relative;left:-8px;">informations du partition:</h6>
+                    </div>
+                    <div>
+                        <form id="pss1" name="pss1" style="position:relative;height:60px;">
+                            <div class="btn" id='cpt' style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey"></div><input class="form-control" id="taipart" min="0" name="parti" placeholder="Taille (KO)" style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:52%;" type="number">
+                            <a class="btn btn-success btn-circle btn-sm" href="#" id="taipartok" style="position: relative;left:152px;top:-60px;"><i class="fas fa-check"></i></a>
+                        </form>
+                    </div>
+                </div>
+            </div>        
+          </div>
+      </li>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <img src=".\svg\three.svg"></img>
+          <span data-intro="Introduire les informations des processus" data-step="5">Les processus</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Le nombre de processus:</h6>
+              <select id="nbp"  class="collapse-item"  style="width: 90%;height:34px;padding-top:1%;">
+                <option value="0">Nombre de processus</option>
+                <option value="1">1 processus </option>
+                <option value="2">2 processus </option>
+                <option value="3">3 processus </option>
+                <option value="4">4 processus </option>
+                <option value="5">5 processus </option>
+                <option value="6">6 processus </option>
+                <option value="7">7 processus </option>
+                <option value="8">8 processus </option>
+                <option value="9">9 processus </option>
+                <option value="10">10 processus </option>
+                </select>  
+                
+                <div>
+                    <div>
+                      <h6 class="collapse-header" style="position:relative;left:-8px;">informations du processus:</h6>
+                  </div>
+                  <div>
+                      <form id="pss4" name="pss4" style="position:relative;height:100px;">
+                          <div class="btn" id='cpt1' style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey"></div><input class="form-control" id="taips" min="0" name="page" placeholder="Taille (KO)" style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:70%;" type="number"> <input class="form-control"
+                              id="tmps" min="0" name="page" placeholder="Temps (S)" style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;" type="number">
+                          <a class="btn btn-success btn-circle btn-sm" href="#" id="psok" style="position: relative;left:152px;top:-54px;"><i class="fas fa-check"></i></a>
+                      </form>
+                  </div>
+          </div>
+          
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div data-intro="Les informations à introduire durant la simulation" data-step="6" class="sidebar-heading">
+        Pendant Simulation
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+
+      <!-- Nav Item - Charts -->
+                    
+          <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ajouterPss" aria-expanded="true" aria-controls="ajouterPss">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <span data-intro="Introduire les informations du processus à ajouter" data-step="7">Ajouter processus</span>
+                </a>
+                <div id="ajouterPss" class="collapse" data-parent="#accordionSidebar">
+
+
+                  <div class="bg-white py-2 collapse-inner rounded">
+                      <div>
+                          <h6 style="position:relative;left:-8px;" class="collapse-header">informations du processus:</h6>
+                      </div>
+                      <div>
+                          <form id="pss8" name="pss8" style="position:relative;height:100px;">
+                              <div class="btn" id='cpt3' style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey">
+                              </div>
+                              <input class="form-control" id="taips1" min="0" name="page" placeholder="Taille (KO)" style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:70%;" type="number">
+                              <input class="form-control" id="tmps1" min="0" name="page" placeholder="Temps (S)" style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;" type="number">
+                              <a class="btn btn-success btn-circle btn-sm" href="#" id="ajoutok" style="position: relative;left:152px;top:-54px;"><i class="fas fa-check"></i></a>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+              </li>
+        
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Aprés Simulation
+      </div>
+      <li data-step="8" data-intro="Terminer la simulation et afficher son bilan" class="nav-item" id="terminer">
+          <a class="nav-link" href="#">
+              <i class="fas fa-door-closed"></i>
+              <span>Terminer la simulation </span></a>
+      </li>
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div  class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column bg-gray-400">
+      <!-- Main Content -->
+      <div id="content">
+    
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <h1 class="h3 mb-0 text-gray-800">Partition Fixe: File Commune</h1>
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+  
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <div class="row" style="margin-left: 0px;">
+                    <div style="margin-top: 16px; margin-right: 16px;"> 
+                      <div  class="btn-group btn-group-toggle float-right " >
+                        <a class="btn btn-outline-success active ">File Commune</a>
+                        <a href="../partitionsFixesFilesSeparees/FileSeparee.html" class="btn btn-outline-success ">Files Séparées</a>
+                    </div>
+                  </div>
+                <div class="topbar-divider d-none d-sm-block"></div>
+                
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   
+                    <i class="fas fa-ellipsis-v"></i>
+                  </a>
+                  <!-- Dropdown - User Information -->
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a  href="AideEnLigne/index.html" target="_blank" class="dropdown-item" href="#">
+                      <i class="far fa-question-circle  mr-2 text-gray-400"></i>
+                     
+                      Aide en ligne
+                    </a>
+                    <a id="tour" class="dropdown-item" href="#">
+                        <i class="fas fa-film fa-fw mr-2 text-gray-400"></i>
+                      Tour
+                    </a>
+                    <a class="dropdown-item" href="../../Les descriptions/DescriptionPartitionFixe/discriptionfilecommune.html" target="_blank">
+                      <i class="far fa-copy  fa-fw mr-2 text-gray-400"></i>
+                      Description
+                    </a>
+                  
+                    </a>
+                  </div>
+                </li>
+                </div>
+              </ul>
+          <!-- Topbar Navbar -->
+        </nav>
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <div id="card" class="card cardshadow-lg p-3 mb-5 bg-white rounded" style="top:-6px;">
+            <svg class="card-image" fill="none" id="svg2" style="position:relative;width:100%;height:550px;" viewbox="0 0 967 460" width="1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="illustration">
+    <text style="font-family: 'Dosis', sans-serif; font-size : 35; font-weight: 700; fill:#4A4D4C;"
+          x="50"
+          y="35">
+      Partitions Fixes: File Commune
+    </text>
+    <line stroke="#232121"
+          stroke-opacity="0.85"
+          x1="40"
+          x2="990"
+          y1="60"
+          y2="60"></line>
+    <image height="460"
+           width="400"
+           x="560"
+           xlink:href="img/redacteur-web.jpg"
+           y="0"></image>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="125">
+      " Dans cette stratégie la mémoire est divisée en n partitions de tailles fixes
+    </text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="150">
+      (si possible inégales).Chaque partition peut être allouée à un programme.
+    </text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="175">
+      L'allocation des partitions fixes en utilisant une file commune consiste à gérer
+    </text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="200">
+      une seule file d'attente.Dès qu'une partition devient libre, toute tâche placée
+    </text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="225">
+      en tête de file d'attente et dont la taille convient peut être chargée dans cette
+    </text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="250">
+      partition vide et exécutée."
+    </text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="275"></text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="300"></text>
+    <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+          x="90"
+          y="325"></text>
+    <text style="font-family: 'Dosis', sans-serif; font-size : 25; font-weight: 700; fill:#4A4D4C;"
+          x="390"
+          y="385">
+      VOUS POUVEZ :
+    </text>
+    <g id="exemple">
+      <rect fill="#01A46D"
+            height="40"
+            id="exe"
+            rx="25"
+            width="200"
+            x="240"
+            y="416"></rect>
+      <text style="font-family: 'Montserrat', sans-serif; ; font-size : 15; font-weight: 300; fill:white;"
+            x="280"
+            y="440">
+        Voir un exemple
+      </text>
+    </g>
+    <g id="senario">
+      <rect fill="#01A46D"
+            height="40"
+            id="sen"
+            rx="25"
+            width="200"
+            x="490"
+            y="416"></rect>
+      <text style="font-family: 'Montserrat', sans-serif; font-size : 15; font-weight: 300; fill:white;"
+            x="510"
+            y="440">
+        Introduire un Scénario
+      </text>
+    </g>
+  </g></svg>
+        </div>
+        </div>
+          <!-- Content Row -->
+
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+  <!-- Logout Modal-->
+
+
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="../../js/intro.js"></script>
+
+ 
+</body>
+
+</html>

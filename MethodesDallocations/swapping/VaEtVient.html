@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge"
+        http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        name="viewport">
+  <meta content=""
+        name="description">
+  <meta content=""
+        name="author">
+  <title>Swaping</title><!-- Custom fonts for this template-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+  <!-- Custom fonts for this template-->
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script src="../../js/d3.min.js"></script>
+  <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="../../css/introjs.css">
+  <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="mainvev.js"></script>
+</head>
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion"
+        id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+       <a class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="../../Index/index.html">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <!-- <i class="fas fa-laugh-wink"></i> -->
+      </div>
+      <div class="sidebar-brand-text mx-3"
+           data-intro="Lien vers la page d'accueil"
+           data-step="1">
+        MemoSim <sup>0.01</sup>
+      </div></a><!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link">
+         <span>Swapping</span></a>
+      </li><!-- Divider -->
+      <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading"
+           data-intro="Introduire les informations de la silmulations"
+           data-step="2">
+        Avant La Simulation
+      </div><!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a aria-controls="collapseTwo"
+            aria-expanded="true"
+            class="nav-link collapsed"
+            data-target="#collapseTwo"
+            data-toggle="collapse"
+            href="#"><img src="./svg/one.svg"> <span data-intro="Choisir la taille de la mémoire"
+              data-step="3">La mémoire centrale</span></a>
+        <div aria-labelledby="headingTwo"
+             class="collapse"
+             data-parent="#accordionSidebar"
+             id="collapseTwo">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">la taille:</h6><select class="collapse-item"
+                 id="taime"
+                 style="width: 90%;height:34px;padding-top:1%;">
+              <option value="100">
+                100 (KO)
+              </option>
+              <option value="200">
+                200 (KO)
+              </option>
+              <option value="300">
+                300 (KO)
+              </option>
+              <option value="400">
+                400 (KO)
+              </option>
+              <option value="500">
+                500 (KO)
+              </option>
+            </select>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a aria-controls="nbPartitons"
+            aria-expanded="true"
+            class="nav-link collapsed"
+            data-target="#nbPartitons"
+            data-toggle="collapse"
+            href="#"><img src="./svg/two.svg"> <span data-intro="Introduire les informations des partitions une par une"
+              data-step="4">Les partitions</span></a>
+        <div aria-labelledby="headingUtilities"
+             class="collapse"
+             data-parent="#accordionSidebar"
+             id="nbPartitons">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Le nombre des partitions:</h6><select class="collapse-item"
+                 id="nbpa"
+                 style="width: 90%;height:34px;padding-top:1%;">
+              <option value="0">
+                Nombre de partitions
+              </option>
+              <option value="1">
+                1 partitions
+              </option>
+              <option value="2">
+                2 partitions
+              </option>
+              <option value="3">
+                3 partitions
+              </option>
+              <option value="4">
+                4 partitions
+              </option>
+              <option value="5">
+                5 partitions
+              </option>
+              <option value="6">
+                6 partitions
+              </option>
+              <option value="7">
+                7 partitions
+              </option>
+              <option value="8">
+                8 partitions
+              </option>
+              <option value="9">
+                9 partitions
+              </option>
+              <option value="10">
+                10 partitions
+              </option>
+            </select>
+            <div>
+              <div>
+                <h6 class="collapse-header"
+                    style="position:relative;left:-8px;">informations du processus:</h6>
+              </div>
+              <div>
+                <form id="pss"
+                      name="pss"
+                      style="position:relative;height:60px;">
+                  <div class="btn"
+                       id='cpt'
+                       style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey"></div><input class="form-control"
+                        id="taipart"
+                        min="0"
+                        name="parti"
+                        placeholder="Taille (KO)"
+                        style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:52%;"
+                        type="number"> <a class="btn btn-success btn-circle btn-sm"
+                        href="#"
+                        id="taipartok"
+                        style="position: relative;left:152px;top:-60px;"><i class="fas fa-check"></i></a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li><!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a aria-controls="collapseUtilities"
+            aria-expanded="true"
+            class="nav-link collapsed"
+            data-target="#collapseUtilities"
+            data-toggle="collapse"
+            href="#"><img src="./svg/three.svg"> <span data-intro="Introduire les informations des processus"
+              data-step="5">Les processus</span></a>
+        <div aria-labelledby="headingUtilities"
+             class="collapse"
+             data-parent="#accordionSidebar"
+             id="collapseUtilities">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Le nombre de processus:</h6><select class="collapse-item"
+                 id="nbp"
+                 style="width: 90%;height:34px;padding-top:1%;">
+              <option value="0">
+                Nombre de processus
+              </option>
+              <option value="1">
+                1 processus
+              </option>
+              <option value="2">
+                2 processus
+              </option>
+              <option value="3">
+                3 processus
+              </option>
+              <option value="4">
+                4 processus
+              </option>
+              <option value="5">
+                5 processus
+              </option>
+              <option value="6">
+                6 processus
+              </option>
+              <option value="7">
+                7 processus
+              </option>
+              <option value="8">
+                8 processus
+              </option>
+              <option value="9">
+                9 processus
+              </option>
+              <option value="10">
+                10 processus
+              </option>
+            </select>
+            <div>
+              <h6 class="collapse-header"
+                  style="position:relative;left:-8px;">informations du processus:</h6>
+            </div>
+            <div>
+              <form id="pss1"
+                    name="pss"
+                    style="position:relative;height:100px;">
+                <div class="btn"
+                     id='cpt1'
+                     style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey"></div><input class="form-control"
+                      id="taips"
+                      min="0"
+                      name="page"
+                      placeholder="Taille (KO)"
+                      style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:70%;"
+                      type="number"> <input class="form-control"
+                      id="tmps"
+                      min="0"
+                      name="page"
+                      placeholder="Temps (S)"
+                      style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;"
+                      type="number"> <a class="btn btn-success btn-circle btn-sm"
+                      href="#"
+                      id="psok"
+                      style="position: relative;left:152px;top:-54px;"><i class="fas fa-check"></i></a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </li>
+      <div class="my-2"></div>
+      <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading"
+           data-intro="Les informations à introduire durant la simulation"
+           data-step="6">
+        Pendant Simulation
+      </div><!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a aria-controls="ajouterPss"  aria-expanded="true" class="nav-link collapsed" data-target="#ajouterPss" data-toggle="collapse" href="#">
+            <i class="fas fa-ellipsis-v"></i>
+            <span data-intro="introduire les informations du processus à ajouter"
+              data-step="7">Ajouter processus</span>
+            </a>
+        <div class="collapse"
+             data-parent="#accordionSidebar"
+             id="ajouterPss">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <div>
+              <h6 class="collapse-header"
+                  style="position:relative;left:-8px;">informations du processus:</h6>
+            </div>
+            <div>
+              <form id="pss"
+                    name="pss"
+                    style="position:relative;height:100px;">
+                <div class="btn"
+                     id='cpt3'
+                     style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey"></div><input class="form-control"
+                      id="taips1"
+                      min="0"
+                      name="page"
+                      placeholder="Taille (KO)"
+                      style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:70%;"
+                      type="number"> <input class="form-control"
+                      id="tmps1"
+                      min="0"
+                      name="page"
+                      placeholder="Temps (S)"
+                      style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;"
+                      type="number"> <a class="btn btn-success btn-circle btn-sm"
+                      href="#"
+                      id="ajoutok"
+                      style="position: relative;left:152px;top:-54px;"><i class="fas fa-check"></i></a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a aria-controls="swap"
+            aria-expanded="true"
+            class="nav-link collapsed"
+            data-target="#swap"
+            data-toggle="collapse"
+            href="#"><i class="fas fa-exchange-alt"></i><span data-intro="Bloquer et débloquer les processus durant leurs excutions"
+              data-step="8">Swapping</span></a>
+        <div class="collapse"
+             data-parent="#accordionSidebar"
+             id="swap">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <div>
+              <h6 class="collapse-header"
+                  style="position:relative;left:-8px;">Bloquer processus</h6>
+              <div>
+                <form id="swp"
+                      name="swp"
+                      style="position:relative;height:100px;">
+                  <input class="form-control"
+                        id="block"
+                        min="0"
+                        name="page"
+                        placeholder="Id Processus"
+                        style="height:34px;position: relative;left:8px;width:70%;top:0px;margin-right: 0%;"
+                        type="number"> <a class="btn btn-danger btn-circle btn-sm"
+                        href="#"
+                        id="blockok"
+                        style="position: relative;left:152px;top:-32px;"><i class="fas fa-times"></i></a>
+                  <h6 class="collapse-header"
+                      style="position:relative;left:-8px; top:-25px">Débloquer processus</h6><input class="form-control"
+                        id="dblock"
+                        min="0"
+                        name="page"
+                        placeholder="Id Processus"
+                        style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;"
+                        type="number"> <a class="btn btn-success btn-circle btn-sm"
+                        href="#"
+                        id="dblockok"
+                        style="position: relative;left:152px;top:-54px;"><i class="fas fa-check"></i></a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li><!-- Divider -->
+      <!-- Sidebar Toggler (Sidebar) -->
+      <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Aprés Simulation
+      </div>
+      <li class="nav-item"
+          data-intro="Terminer la simulation et afficher son bilan"
+          data-step="9"
+          id="terminer">
+        <a class="nav-link"
+            href="#"><i class="fas fa-door-closed"></i><span>Terminer la simulation</span></a>
+      </li>
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0"
+             id="sidebarToggle"></button>
+      </div>
+    </ul><!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div class="d-flex flex-column bg-gray-400"
+         id="content-wrapper">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <h1 class="h3 mb-0 text-gray-800">Swapping</h1><!-- Sidebar Toggle (Topbar) -->
+          <button class="btn btn-link d-md-none rounded-circle mr-3"
+               id="sidebarToggleTop"></button>
+               <ul class="navbar-nav ml-auto">
+                <div class="topbar-divider d-none d-sm-block"></div>
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   
+                    <i class="fas fa-ellipsis-v"></i>
+                  </a>
+                  <!-- Dropdown - User Information -->
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                      <a href="AideEnLigne/index.html" class="dropdown-item" target="_blank">
+                        <i class="far fa-question-circle  mr-2 text-gray-400"></i>
+                       
+                        Aide en ligne
+                      </a>
+                    <a id="tour" class="dropdown-item" href="#">
+                        <i class="fas fa-film fa-fw mr-2 text-gray-400"></i>
+                      Tour
+                    </a>
+                    <a class="dropdown-item" href="../../Les descriptions/DescriptionVaEtVient/discriptionswap.html" target="_blank">
+                      <i class="far fa-copy  fa-fw mr-2 text-gray-400"></i>
+                      Description
+                    </a>
+                    
+                    </a>
+                  </div>
+                </li>
+                
+          </ul>
+        </nav><!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <!-- Content Row -->
+          <!-- Default Card Example -->
+          <div class="card cardshadow-lg p-3 mb-5 bg-white rounded"
+               id="card"
+               style="top:-6px;">
+            <svg class="card-image"
+                 fill="none"
+                 id="svg2"
+                 style="position:relative;width:100%;height:550px;"
+                 viewbox="0 0 967 460"
+                 width="1000"
+                 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+            <image height="250"
+                   id="vaEtVient"
+                   width="220"
+                   x="550"
+                   xlink:href="capture.png"
+                   y="200"></image>
+            <g id="illustration">
+              <text style="font-family: 'Dosis', sans-serif; font-size : 35; font-weight: 700; fill:#4A4D4C;"
+                    x="50"
+                    y="35">
+                SWAPING :
+              </text>
+              <line stroke="#232121"
+                    stroke-opacity="0.85"
+                    x1="40"
+                    x2="990"
+                    y1="60"
+                    y2="60"></line>
+              <image height="460"
+                     width="400"
+                     x="560"
+                     xlink:href="img/redacteur-web.jpg"
+                     y="0"></image>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="125">
+                "La stratégie appelée va-et-vient (swap) consiste
+              </text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="150">
+                à considérer chaque processus dans son intégralité: en cas de réquisition du
+              </text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="175">
+                processeur, le programme en cours doit être sauvegardé sur disque avant le
+              </text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="200">
+                chargement en mémoire principale de son successeur, dans sa totalité, pour
+              </text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="225">
+                exécution".
+              </text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="250"></text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="275"></text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="300"></text>
+              <text style="font-family: 'Roboto', sans-serif; font-size : 15; font-weight: 200; fill:#817B7B;"
+                    x="90"
+                    y="325"></text>
+              <text style="font-family: 'Dosis', sans-serif; font-size : 25; font-weight: 700; fill:#4A4D4C;"
+                    x="390"
+                    y="385">
+                VOUS POUVER :
+              </text>
+              <g id="exemple">
+                <rect fill="#01A46D"
+                      height="40"
+                      id="exe"
+                      rx="25"
+                      width="200"
+                      x="240"
+                      y="416"></rect>
+                <text style="font-family: 'Montserrat', sans-serif; ; font-size : 15; font-weight: 300; fill:white;"
+                      x="280"
+                      y="440">
+                  Voir un exemple
+                </text>
+              </g>
+              <g id="senario">
+                <rect fill="#01A46D"
+                      height="40"
+                      id="sen"
+                      rx="25"
+                      width="200"
+                      x="490"
+                      y="416"></rect>
+                <text style="font-family: 'Montserrat', sans-serif; font-size : 15; font-weight: 300; fill:white;"
+                      x="510"
+                      y="440">
+                  Introduire un Scénario
+                </text>
+              </g>
+            </g></svg>
+          </div>
+        </div><!-- Content Row -->
+        <!-- /.container-fluid -->
+      </div><!-- End of Main Content -->
+      <!-- Footer 
+      <footer class="sticky-footer bg-white"
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+       End of Footer -->
+    </div><!-- End of Content Wrapper -->
+  </div><!-- End of Page Wrapper -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded"
+        href="#page-top"></a> <!-- Logout Modal-->
+   <!-- Bootstrap core JavaScript-->
+    <!-- Logout Modal-->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+    <!-- Custom scripts for all pages-->
+    <script src="../../js/sb-admin-2.min.js"></script>
+  
+    <!-- Page level plugins -->
+    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="../../js/intro.js"></script>
+</body>
+</html>

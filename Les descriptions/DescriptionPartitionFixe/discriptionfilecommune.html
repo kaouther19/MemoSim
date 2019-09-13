@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="discriptionfilecommune.css">
+    <title>Description</title>
+</head>
+<body>
+        
+    <h1 id="partvar">Partition fixe:File commune</h1>
+    <div id="heada"></div>
+    <a href="#def" id="a1">1.Définiton et principe</a>
+    <a href="#not" id="a2">2.Notions à comprendre</a>
+    <a href="#stru" id="a3">3.Structures intervenants</a>
+    <a href="#etap" id="a4">4.Etapes d'éxecution</a>
+    <a href="#inav" id="a5">5.Incovénients et avantages</a>
+    <div id="delimiteur">
+    <h2 id="def">1.Définition et principe</h2>
+    <p id="defp">C'est une partie de la technique d'allocation contiguë de la multiprogrammation.
+         au démarrage du système,la mémoire est divisée en n partitions de tailles fixes 
+         (si possible inégales).Chaque partition peut être allouée à un programme de taille 
+         inférieure ou égale à la taille de la partition.
+         C’est un mécanisme simple soufrant de la fragmentation interne.</p>
+         <img id="im1" src="image1.PNG">
+         <img id="im2" src="image2.PNG">
+         <p id="defp2">Cette organisation consiste à gérer une seule file d'attente. Dès qu'une partition devient libre, toute tâche placée en tête 
+             de la file d'attente et dont la taille convient peut être chargée dans cette partition vide et exécutée.</p>
+    <h2 id="not">2.Notions à comprendre</h2>
+    <h4 id="part">a.Partition</h4>
+    <p id="partp">Memory partitioning is the system by which the memory of a computer system is divided into sections for use by the resident programs. These memory divisions are known as partitions</p>
+    <h4 id="fragex">b.Fragmentation interne :</h4>
+    <p id="fragexp">Soient un programme de taille M et une partition de taille N (partition fixe). Si la partition est allouée 
+        au programme avec N>M alors la partie non occupée par le programme est appelée fragmentation interne.
+        
+        <h4 id="fragex1">c.Fragmentation externe :</h4>
+        <p id="fragexp1">Soit un programme de taille M. Si toute partition libre est de taille Pi telle que Pi est inférieure à M alors le programme ne peut être chargé dans aucune partition libre alors que :
+                On dit qu'il y a fragmentation externe. La mémoire est fragmentée en un grand nombre de petits trous.
+        </p>
+        <img id="im3" src="image3.PNG">
+        <img id="im4" src="image4.PNG">          
+                
+    <h2 id="stru">3.Structures intervenants</h2>
+      <h4 id="letat">a.La table d’etat :</h4>
+    <p id="pletat">Le système d'exploitation maintient une table de description des partitions. Cette table contient les caractéristiques de chaque partition : l’identificateur, l'adresse début, la taille et l'état (libre/occupée).</p>
+    <img id="im5" src="image5.PNG">
+    <h4 id="fil">b.La file d’attente commune:</h4>
+    <p id=pfil>C’est une structure de file contenant les processus chargés par l’utilisateur</p>
+    <h2 id="etap">4.Etapes d'éxecution</h2>
+    <h4 id="rech">a.la recherche</h4>
+    <p id="rechp">Le rôle de cette étape est de trouver une partition vide et suffisamment grande pour l'insertion d'un nouveau processus en utilisant la table d'état et en comparant toute les tailles des partitions 
+        libres avec la taille du processus qui est placé en tête de la file d'attente. </p>
+             <h4 id="defil">b. le défilement</h4>
+            <p id="defilp">Après avoir trouvé une partition convenable au processus, ce dernier va être défilé de la file.
+             </p>
+             <h4 id="inser">c.l'insertion</h4>
+             <p id="inserp">-C'est l'ajoute de processus dans 
+                 une partition dans la mémoire centrale dans l’emplacement retourné par l'opération de recherche.
+              <p id="inserp1">-a la fin de l’insertion son temps d’execution se lance</p> 
+            </p>
+            <h4 id="lib">d.la libération </h4>
+            <p id="libp">Après la fin de l'exécution du processus, ce dernier quitte la partition elle devient libre et capable de recevoir un nouveau processus.
+                </p>
+                 <h2 id="inav">5.Avantages et inconvénients du partitionnement variable </h2>
+            <h4 id="avan">a.les avantages</h4>
+           
+             <h4 id="incov">b.les inconvénients</h4>
+           
+        </div>
+        <a href="#partvar" >
+        <img src="haut.png"  id="hautp" title="haut de page"></a>
+        <a href="partvar.html" >
+                        <img src="retour.png"  id="back" title="retour"></a>
+</body>
+</html>

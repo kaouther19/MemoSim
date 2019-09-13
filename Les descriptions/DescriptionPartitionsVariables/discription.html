@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="discription.css">
+    <title>Description</title>
+</head>
+<body>
+        
+    <h1 id="partvar">PARTITIONS VARIABLES</h1>
+    <div id="heada"></div>
+    <a href="#def" id="a1">1.Définiton et principe</a>
+    <a href="#not" id="a2">2.Notions à comprendre</a>
+    <a href="#stru" id="a3">3.Structures intervenants</a>
+    <a href="#etap" id="a4">4.Etapes d'éxecution</a>
+    <a href="#inav" id="a5">5.Incovénients et avantages</a>
+    <div id="delimiteur">
+    <h2 id="def">1.Définition et principe</h2>
+    <p id="defp">C'est une partie de la technique d'allocation contiguë de la multiprogrammation. Elle est est utilisé pour résoudre le problème posé par le partitionnement fixe. Les partitions ne sont pas créées avant l'exécution ou pendant la configuration du système.
+        Initialement, la RAM est vide et les partitions sont créées pendant l’exécution en fonction des besoins du processus,
+        La taille de la partition sera égale au processus entrant, ce qui permet d'éviter la fragmentation interne et d'assurer une utilisation efficace de la mémoire vive.
+        Le nombre de partitions dans la RAM n’est pas fixe et dépend du nombre de processus entrants et de la taille de la mémoire principale.
+        </p>
+        <img id="im1" src="1.PNG">
+        <img id="im2" src="2.PNG">
+    <h2 id="not">2.Notions à comprendre</h2>
+    <h4 id="fragex">a.Fragmentation externe</h4>
+    <p id="fragexp">Au fur et à mesure des opération d'allocation et de désallocation,la mèmoire centrale devient composée d'un ensenble de zones occupées et de zones libres éparpillées dans toutes l'étendue de la mémoire centrale.Ces zones libres peuvent étre chacune trop petites pour permettre l'allocation de nouveaux programmes ,alors que la somme totale de l'espace libre est suffisant : on parle alors de la fragmentation externe</p>
+    <h2 id="stru">3.Structures intervenants</h2>
+    <h4 id="letat">a.les listes d’etat :</h4>
+    <p id="pletat">le gestionnaire de la mémoire garde une trace des partitions occupées et des partitions libres. Une solution consiste à maintenir deux listes dont l'une est destinée aux partitions occupées et l'autre aux partitions libres ou chaque élément de la liste contient la taille ,l’adresse début et l’identifiant de la partition.</p>
+    <h4 id="fil">b.Une file d’attente :</h4>
+    <p id=pfil>C’est une structure de file contenant les processus chargés par l’utilisateur</p>
+    <h2 id="etap">4.Etapes d'éxecution</h2>
+    <h4 id="rech">a.la recherche</h4>
+    <p id="rechp">L’OS cherche dans la liste des partitions libres la partition qui a une taille suffisante pour le processus.
+            Cette opération de recherche suit plusieurs algorithmes d’allocation :
+            </p>
+            <img src="3.png" id="im3">
+            <img src="4.png" id="im4">
+            <img src="5.png" id="im5">
+            <img src="6.png" id="im6">
+            <h4 id="defil">b.le défilement</h4>
+            <p id="defilp">Si l’OS trouve la partition convenant ou si la taille de processus est supérieur à celle de la mémoire ,il se défile 
+                    .Sinon le processus reste dans la file
+             </p>
+             <h4 id="inser">c.l'insertion</h4>
+             <p id="inserp">-apres le défilement de processus il s’ajoute dans la mémoire centrale dans l’emplacement retourné par l'opération de recherche en créant une nouvelle partition ayant la meme taille de processus
+              <p id="inserp1">-a la fin de l’insertion son temps d’execution se lance</p> 
+            </p>
+            <h4 id="lib">d.la libération</h4>
+            <p id="libp">- La libération se produit quand un processus est évacué(quand le temps d’exécution se termine) de la MC. On marque alors le bloc à libre et on le fusionne éventuellement avec des blocs adjacents.</p>
+            <p id="libp1">Supposons que X soit le bloc qui se libère, on a les schémas de fusion suivants :</p>
+            <img src="7.PNG" id="im7">
+            <h2 id="inav">5.Avantages et inconvénients du partitionnement variable </h2>
+            <h4 id="avan">a.les avantages</h4>
+            <p id="avan1">-Aucune fragmentation interne. </p>
+            <p id="avan2">-Dans la partition variable, l’espace dans la mémoire principale est alloué strictement en fonction des besoins en processus, il n’y a  pas donc de cas de fragmentation interne. Il n'y aura plus d'espace inutilisé dans la partition. </p>
+            <p id="avan3">-Aucune restriction sur le degré de multiprogrammation : Un plus grand nombre de processus peut être adapté en raison de l'absence de fragmentation interne. Un processus peut être chargé jusqu'à ce que la mémoire ne soit pas vide.</p>
+            <p id="avan4">-Aucune limitation sur la taille du processus : Dans le partitionnement fixe, le processus dont la taille est supérieure à la taille de la partition la plus grande n'a pas pu être chargé et le processus ne peut pas être divisé car il n'est pas valide dans la technique d'allocation contiguë. Ici, dans le partitionnement variable, la taille du processus ne peut pas être restreinte car la taille de la partition est déterminée en fonction de la taille du processus. </p>
+            <h4 id="incov">b.les inconvénients</h4>
+            <p id="incov1">-Mise en œuvre difficile :  Le partitionnement est difficile par rapport au partitionnement fixe car il implique une allocation de mémoire lors de l'exécution plutôt que pendant la configuration du système.</p>
+
+       <p id="incov2">-Fragmentation externe : Il y aura une fragmentation externe malgré l'absence de fragmentation interne.</p>
+        </div>
+        <a href="#partvar" >
+        <img src="haut.png"  id="hautp" title="haut de page"></a>
+        <a href="partvar.html" >
+                        <img src="retour.png"  id="back" title="retour"></a>
+</body>
+</html>

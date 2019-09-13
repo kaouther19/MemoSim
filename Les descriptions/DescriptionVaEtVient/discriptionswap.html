@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="discriptionswap.css">
+    <title>Description</title>
+</head>
+<body>
+        
+    <h1 id="partvar">Swapping</h1>
+    <div id="heada"></div>
+    <a href="#def" id="a1">1.Définiton et principe</a>
+    <a href="#not" id="a2">2.Notions à comprendre</a>
+    <a href="#stru" id="a3">3.Structures intervenants</a>
+    <a href="#etap" id="a4">4.Etapes d'éxecution</a>
+    <a href="#inav" id="a5">5.Incovénients et avantages</a>
+    <div id="delimiteur">
+    <h2 id="def">1.Définition et principe</h2>
+    <p id="defp">La stratégie appelée va-et-vient (swap) ,consiste à considérer chaque processus dans son intégralité: en cas de réquisition du processeur, le programme en cours doit être sauvegardé
+         sur disque avant le chargement en mémoire
+          principale de son successeur, dans sa totalité, pour exécution.</p>
+         <img id="im1" src="1.PNG">
+        
+          <h2 id="not">2.Notions à comprendre</h2>
+    <h4 id="part">a.Etats du processus</h4>
+    <p id="partp">Les processus, puisqu'ils sont concurrents et doivent se partager le processeur, ne peuvent être continuellement actifs. Ils ont donc, si on ne considère pour
+        commencer que l'ordonnancement à court
+         terme, trois niveaux fondamentaux et quatre transitions possibles.
+         <img id="im2" src="2.PNG">
+          
+    <p id="fragexp">Elu signifie en cours d'exécution. L'exécution n'est interrompue que par les conditions suivantes :
+        <p id="fragexp1">Transition 1 :	Le processus se bloque,
+             faute de données pour l'alimenter ou en attendant une opération d'entrée/sortie.</p>
+             <p id="fragexp2">Transition 2 :	Le processus est interrompu soit parce que la tranche de temps qui lui est impartie 
+                 est achevée soit parce qu'un processus de plus haute priorité réquisitionne le processeur.
+            </p> 
+            <p id="fragexp3">L'état Prêt 
+                est un état provisoire pour permettre aux autres processus de s'exécuter quasi simultanément.
+            </p> 
+            <p id="fragexp4">L'état Bloqué est un état d'attente d'un événement extérieur,
+                 tel qu'une entrée/sortie, nécessaire à la poursuite de l'exécution du processus. </p> 
+             
+                 <p id="fragexp5">Ajoutons deux 
+                     états qui correspondent à l'ordonnancement à long terme : les états " Nouveau " et " Terminé ". </p> 
+                     
+                     <h4 id="part2">b.Mémoire virtuelle( Dans ce cas le disque )</h4>
+                     <p id="part2p">En informatique, le mécanisme de mémoire virtuelle a 
+                         été mis au point dans les années 1960. Il repose sur l'utilisation de traduction à la volée des adresses
+                          (virtuelles) vues du logiciel, en adresses physiques de mémoire vive. La mémoire virtuelle permet : </p> 
+                        
+                          <p id="part2p1">•	d'utiliser de la mémoire de masse comme extension de la mémoire vive ; </p> 
+                          <p id="part2p2">•	d'augmenter le taux de multiprogrammation ;</p> 
+                          <p id="part2p3">•	de mettre en place des mécanismes de protection de la mémoire ; </p> 
+                          <p id="part2p4">•	de partager la mémoire entre processus. </p> 
+                          <h4 id="part3">c.Swapped out</h4> 
+                          <p id="part3p">Chargement du processus de la mémoire vers le disque . </p> 
+                          <h4 id="part4">c.Swapped in</h4> 
+                          <p id="part4p">Chargement du processus du disque vers la mémoire </p> 
+                            
+    <h2 id="stru">3.Structures intervenants</h2>
+      <h4 id="letat">a.Le disque:</h4>
+    <p id="pletat">Le disque dur externe est un disque dur conventionnel embarqué dans un boitier solide facilement transportable qui se connecte à un ordinateur en USB. Le but est de pouvoir transporter un très grand nombre de données ou faire une sauvegarde complète de son ordinateur pour protéger ses données. Le disque dur externe est utile si une clé USB ne suffit pas, car 
+        le disque dur a une bien plus grande capacité, jusqu'à plusieurs To (Téra Octets soit des milliers de Go).</p>
+   
+  
+    <h2 id="etap">4.Etapes d'éxecution</h2>
+    <p id="rechp">1.Sauvegarde du programme du processus en cours (processus actif) en mémoire secondaire (M.S). </p>
+    <p id="rechp1">2.Chargement du programme du processus élu, Un programme est chargé, entièrement, en M.C. avant de commencer son exécution </p>
+    <img id="im3" src="3.PNG"> 
+                
+    
+    <h2 id="inav">5.Avantages et inconvénients du partitionnement variable </h2>
+            <h4 id="avan">a.les avantages</h4>
+            <p id="avan1">Tous processus interrompu par une instruction
+                 d’entrée sortie est chargé dans le disque en lassant sa place pour un autre processus. </p>
+     
+             <h4 id="incov">b.les inconvénients</h4>
+             <p id="incov1">Processeur inutilisé pendant les transferts de programmes et les entrées/sorties. </p>
+        
+        </div>
+    
+</body>
+</html>

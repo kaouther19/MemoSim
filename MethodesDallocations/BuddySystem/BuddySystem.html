@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Buddy System</title>
+  <!-- Custom fonts for this template-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script src="../../js/d3.min.js"></script>
+  <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="../../css/introjs.css">
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../../css/buddy.css" rel="stylesheet">
+ <script src="ScriptCommencer.js"></script>
+  
+</head>
+
+<body id="page-top" >
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+  
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../Index/index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <!-- <i class="fas fa-laugh-wink"></i> -->
+        </div>
+        <div data-intro="Lien vers la page d'accueil" data-step="1" class="sidebar-brand-text mx-3">MemoSim <sup>0.01 </sup></div>
+      </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link">
+          <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+          <span>Buddy System</span></a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Avant La Simulation
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item" data-step="2" data-intro="Introduire les informations relatives à la mémoire centrale">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <img src=".\svg\one.svg"></img>
+          <span>La mémoire centrale</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">la taille:</h6>
+            <select id="tailleMem" class="collapse-item"  style="width: 90%;height:34px;padding-top:1%;" disabled="true">
+              <option value="2">2 (KO) </option>
+              <option value="4">4 (KO)</option>
+              <option value="16">16 (KO)</option>
+              <option value="32">32 (KO)</option>
+              <option value="64">64 (KO)</option>
+              <option value="128">128 (KO)</option>
+              </select> 
+                <!-- <div id ="validMem"style="position:relative;left:80px;padding-bottom:8px;padding-top:8px;">
+                  <a  href="#" class="btn btn-success btn-circle">
+                  <i class="fas fa-check"></i>
+                  <script>
+                      d3.select("#validMem").on('click',function(){
+                      });
+                  </script>
+                  </a>
+                  </div> -->
+                  <!-- <span style="padding-top: 10px;"> <svg id='cpt' height='25' width='25' style="border-radius: 3px 3px 3px 3px;background-color:cadetblue;position:relative;top:-5px;left:7px"></svg>
+                  <form id='ref'>
+                      <input id="page" type="number" name="page" style="border-radius: 3px 3px 3px 3px;position: relative;top: -30px;left:34px;width:58%">
+                      <button  id="ok" type="button"style=" position: relative;top: -30px;left:33px;">OK</button>
+                  </form></span> </div> -->
+                             </div>
+        
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li data-step="3" data-intro="Initialiser les informations de processus : Choisir le nombre sa taille et introduir le temps d'exécution " class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <img src=".\svg\two.svg"></img>
+          <span>Les processus</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Le nombre de processus:</h6>
+              <select id="nbPss" class="collapse-item"  style="width: 90%;height:34px;padding-top:1%;" disabled="true">
+                <option value="1">1 processus </option>
+                <option value="2">2 processus </option>
+                <option value="3">3 processus </option>
+                <option value="4">4 processus </option>
+                <option value="5">5 processus </option>
+                <option value="6">6 processus </option>
+                <option value="7">7 processus </option>
+                <option value="8">8 processus </option>
+                <option value="9">9 processus </option>
+                <option value="10">10 processus </option>
+                </select>  
+                
+                <div>
+                    <h6 style="position:relative;left:-8px;" class="collapse-header">informations du processus:</h6>                
+                </div>
+                    <div > 
+                    <form id="pss" style="position:relative;height:100px;">
+                        <div id='cpt' class="btn" style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey">1</div>
+                        <input id="taillePss" class="form-control" type="number" name="page" style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:70%;"  placeholder="Taille (KO)" disabled="true">
+                        <input id="tempsPss" class="form-control" type="number" name="page" style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;"  placeholder="Temps (S)" disabled="true">
+                        <a id="valider" href="#" style=" position: relative;left:152px;top:-54px;" class="btn btn-success btn-circle btn-sm" onclick="myFunction3()" >
+                            <i class="fas fa-check"></i>
+                          </a>
+                    </form></div>
+          </div>
+          
+        </div>
+      </li>
+
+      
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Pendans Simulation
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+
+      <!-- Nav Item - Charts -->
+                    
+          <li data-step="4" data-intro="Ajouter un processus au cours de la simulation" class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#ajouterPss" aria-expanded="true" aria-controls="ajouterPss">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <span>Ajouter processus</span>
+                </a>
+                <div id="ajouterPss" class="collapse"  data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                        <div>
+                            <h6 style="position:relative;left:-8px;" class="collapse-header">informations du processus:</h6>                
+                        </div>
+                            <div > 
+                            <form id="pss" style="position:relative;height:100px;">
+                                <div id='cpt' class="btn" style="height:34px;width:34px;position:relative;top:4px;left:8px;border-color:lightgrey;background-color: lightgrey">1</div>
+                                <input id="tailleP" class="form-control" type="number" name="page" style="padding-right:0px;height:34px;position: relative;top: -30px;left:48px;width:70%;" placeholder="Taille (KO)" disabled="true">
+                                <input id="page" class="form-control" type="number" name="page" style="height:34px;position: relative;left:8px;width:70%;top:-24px;margin-right: 0%;"  placeholder="Temps (S)" disabled="true">
+                                <a id="valider" href="#" style=" position: relative;left:152px;top:-54px;" class="btn btn-success btn-circle btn-sm" onclick="myFunction4()">
+                                    <i class="fas fa-check"></i>
+                                  </a>
+                            </form></div>
+                  </div>
+                  
+                </div>
+              </li>
+        <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Aprés Simulation
+      </div>
+      <li data-step="5" data-intro="Terminer la simulation et afficher son bilan" class="nav-item"  id="SimTER">
+          <a class="nav-link" href="#">
+            <i class="fas fa-door-closed"></i>
+            <span>Terminer la simulation </span></a>
+        </li>
+
+      <!-- Divider -->
+      
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div  class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column bg-gray-400">
+      <!-- Main Content -->
+      <div id="content">
+    
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <h1 class="h3 mb-0 text-gray-800">Buddy System</h1>
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+  
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                
+    
+                
+                
+    
+               
+                <div class="topbar-divider d-none d-sm-block"></div>
+                
+                <!-- Nav Item - User Information -->
+                <li data-step="6" data-intro="Accéder aux fonctionnaliés : Aide en ligne, Description" class="nav-item dropdown no-arrow" class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   
+                    <i class="fas fa-ellipsis-v"></i>
+                  </a>
+                  <!-- Dropdown - User Information -->
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a href="AideEnLigne/index.html" target="_blank" class="dropdown-item"  >
+                      <i class="far fa-question-circle  mr-2 text-gray-400"></i>
+                     
+                      Aide en ligne
+                    </a>
+                    <a class="dropdown-item" href="#" onclick="Tour()">
+                        <i class="fas fa-film fa-fw mr-2 text-gray-400"></i>
+                      Tour
+                    </a>
+                    <a href="../../Les descriptions/DescriptionBuddySystem/discription.html"  target="_blank" class="dropdown-item" href="#">
+                      <i class="far fa-copy  fa-fw mr-2 text-gray-400"></i>
+                      Description
+                    </a>
+                    
+                    </a>
+                  </div>
+                </li>
+                
+              </ul>
+          <!-- Topbar Navbar -->
+        </nav>
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          
+          <!-- Content Row -->
+<!-- Default Card Example -->
+
+<div class="card cardshadow-lg p-3 mb-5 bg-white rounded" style="top:-6px;" id="RightContainer">
+  
+    <svg class="card-image" id="svg2" width="1000" style="position:relative;width:100%;height:520px;"
+   viewBox="0 0 967 460" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <g id="illustration"> 
+   <text x="50" y="35"  style="font-family: 'Dosis', sans-serif; font-size  : 35; font-weight: 700; fill:#4A4D4C;"  >Buddy System :</text>
+     <line x1="40" y1="60" x2="990" y2="60" stroke="#232121" stroke-opacity="0.85"/>
+     <image xlink:href="img/redacteur-web.jpg" x="560" y="0" height="460" width="400" /> 
+     <text x="90" y="125"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >"Le Buddy-System est une méthode intermédiaire entre les partitions fixes </text> 
+     <text x="90" y="150"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >et les partitions variables ;les partitions sont variables, mais leurs tailles ne </text>
+     <text x="90" y="175"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >sont pas quelconques : ce sont des puissances de 2. Au lancement du système, </text>
+     <text x="90" y="200"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >on crée une seule partition dont la taille est une puissance de 2, soit 2p.  </text>
+     <text x="90" y="225"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >Lorsqu'on doit charger le premier processus, de taille t, on calcule k tel que </text>  
+     <text x="90" y="250"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >2k-1 < t <= 2k. Tant qu'il n'existe pas de partition de taille k, on divise par 2  </text>  
+     <text x="90" y="275"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >une partition de taille supérieure. L'algorithme de libération est très simple :  </text>  
+     <text x="90" y="300"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >Pour accoler le bloc libéré à un voisin, on examine son adresse : </text>
+     <text x="90" y="325"  style="font-family: 'Roboto', sans-serif; font-size  : 15; font-weight: 200; fill:#817B7B;"  >si c'est une puissance de 2, il peut se coller au suivant, sinon au précédent." </text>
+     <text x="390" y="385"  style="font-family: 'Dosis', sans-serif; font-size  : 25; font-weight: 700; fill:#4A4D4C;"  >VOUS POUVEZ :</text>
+     
+       
+       
+     <g id="exemple" >
+    
+     <rect id="exe"x="240" y="416"  fill="#01A46D" width="200" rx="25" height="40"></rect> 
+     <text x="280" y="440"  style="font-family: 'Montserrat', sans-serif; ; font-size  : 15; font-weight: 300; fill:white;"  >Voir un exemple</text>
+   </g>
+   <g id="senario">
+      
+     <rect id="sen"x="490" y="416"  fill="#01A46D" width="200" rx="25" height="40"></rect>  
+     <text x="510" y="440"  style="font-family: 'Montserrat', sans-serif; font-size  : 15; font-weight: 300; fill:white;"  >Introduire un Scénario</text>
+   </g>
+  </g>
+   </svg>
+  </div>
+          <!-- Content Row -->
+
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer 
+      <footer class="sticky-footer bg-white"
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+       End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+  <!-- Logout Modal-->
+
+
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="../../js/intro.js"></script>
+
+ 
+</body>
+
+</html>
